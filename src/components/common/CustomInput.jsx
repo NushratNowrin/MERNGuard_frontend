@@ -1,7 +1,7 @@
 import { Label, TextInput } from 'flowbite-react';
 import React from 'react';
 
-const CustomInput = ({ label, placeholder, name, ...rest }) => {
+const CustomInput = ({ label, errors, placeholder, name, ...rest }) => {
   return (
     <>
       <div className="mb-2 block">
@@ -13,6 +13,14 @@ const CustomInput = ({ label, placeholder, name, ...rest }) => {
         type="text"
         placeholder={placeholder}
         required
+        color={errors ? 'failure' : ''}
+        helperText={
+          errors ? (
+            <>
+              <span className="font-medium">{errors}</span>
+            </>
+          ) : null
+        }
         {...rest}
       />
     </>
