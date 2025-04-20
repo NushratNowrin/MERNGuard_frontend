@@ -5,7 +5,7 @@ import axiosInstance from '../../utils/AxiosInstance';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
-function OtpForm({ inputsRef, handleSubmit }) {
+function OtpForm({ inputsRef, title, handleSubmit }) {
   const handleKeyUp = (index, event) => {
     if (event.key === 'Backspace' && index > 0 && event.target.value === '') {
       inputsRef.current[index - 1].focus();
@@ -37,7 +37,9 @@ function OtpForm({ inputsRef, handleSubmit }) {
     <>
       <div className="flex flex-col items-center gap-4">
         <SiFusionauth className="text-5xl" />
-        <h1 className="text-2xl font-bold mb-10">Verify Email By OTP</h1>
+        <h1 className="text-2xl font-bold mb-10">
+          {title ?? 'Verify Email By OTP'}
+        </h1>
       </div>
 
       <form className="max-w-sm mx-auto" onSubmit={handleSubmit}>

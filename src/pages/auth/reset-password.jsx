@@ -71,7 +71,7 @@ function ResetPasswordPage() {
         <div>
           <CustomInput
             label={'Repeat Password'}
-            type="Confirm Password"
+            type="password"
             name="confirmPassword"
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}

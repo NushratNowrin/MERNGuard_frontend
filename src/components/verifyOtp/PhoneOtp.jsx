@@ -22,7 +22,6 @@ const PhoneOtp = () => {
         otp: await getTheOtp(),
         userId: window.location.href.split('=')[1],
       });
-      console.log(response, 'from the response line 25');
       updateUser(response.data.data);
       toast.success('Phone Verified Success');
       navigate('/user-profile');
@@ -32,7 +31,11 @@ const PhoneOtp = () => {
   };
   return (
     <div>
-      <OtpForm inputsRef={inputsRef} handleSubmit={handleSubmit} />
+      <OtpForm
+        title="Verify Phone By OTP"
+        inputsRef={inputsRef}
+        handleSubmit={handleSubmit}
+      />
     </div>
   );
 };

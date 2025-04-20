@@ -4,14 +4,22 @@ export const storage = {
     try {
       return JSON.parse(localStorage.getItem(key));
     } catch (error) {
-      console.log(`Error getting Key [${key}] from localStorage`, error);
+      console.log(
+        `Error getting Key 
+        [${key}] from localStorage`,
+        error
+      );
     }
   },
   set: (key, value) => {
     try {
       return localStorage.setItem(key, JSON.stringify(value));
     } catch (error) {
-      console.log(`Error getting Key [${key}] from localStorage`, error);
+      console.log(
+        `Error getting Key
+        [${key}] from localStorage`,
+        error
+      );
     }
   },
   remove: (key) => {

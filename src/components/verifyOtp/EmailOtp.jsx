@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 import { useAuth } from '../../hooks/useAuth';
 
 const EmailOtp = () => {
-  const { updateUser } = useAuth();
+  const { updateUser, isAuthenticated } = useAuth();
   const navigate = useNavigate();
   const inputsRef = useRef([]);
   const getTheOtp = () => {
@@ -20,7 +20,7 @@ const EmailOtp = () => {
         otp: await getTheOtp(),
         userId: window.location.href.split('=')[1],
       });
-      updateUser(response.data.data);
+      if (isAuthenticated) updateUser(response.data.data);
       toast.success('Email Verified Success');
       navigate('/user-profile');
     } catch (error) {
@@ -29,7 +29,11 @@ const EmailOtp = () => {
   };
   return (
     <div>
-      <OtpForm inputsRef={inputsRef} handleSubmit={handleSubmit} />
+      <OtpForm
+        title="Verify Phone By OTP"
+        inputsRef={inputsRef}
+        handleSubmit={handleSubmit}
+      />
     </div>
   );
 };

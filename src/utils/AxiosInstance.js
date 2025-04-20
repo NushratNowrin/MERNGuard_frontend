@@ -6,7 +6,8 @@ import {
 
 const axiosInstance = axios.create({
   baseURL: 'http://localhost:5500/api/auth',
-  withCredentials: true, // Include credential (Cookie)
+  withCredentials: true,
+  // Include credential (Cookie)
 });
 
 axiosInstance.interceptors.request.use(
