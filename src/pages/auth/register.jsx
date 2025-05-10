@@ -104,7 +104,10 @@ function RegisterPage() {
 			</form>
 			<div className='text-center pt-5'>
 				<span>
-					You already have account ? <Link to='/login'>Sign in</Link>
+					You already have account ?
+					<span className='text-cyan-700 font-semibold'>
+						<Link to='/login'> Sign in</Link>
+					</span>
 				</span>
 			</div>
 		</>
